@@ -5,11 +5,13 @@ namespace :rover do
     url = test_file_url
     file = File.open(url)
     file_data = file.readlines.map(&:chomp)
+    
     plateau_size = file_data[0]
     file_data.delete_at(0)
     counter = 0
     initial_positions = []
     movements = []
+    
     file_data.each do |line|
       if(counter % 2 == 0)
         initial_positions << line
